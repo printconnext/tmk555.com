@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="ทิพย์มงคล555 Property ขายที่ดินริมทะเล พูลวิลล่า และบ้านพักตากอากาศ ที่มีโฉนดทุกแปลง">
+<title>ทิพย์มงคล555 Property</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Anuphan:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: "ทะเลยามเย็น + ใบโฉนด" — ภาพวาดทะเลเต็มจอเปิดหน้า แล้วข้อมูลแปลงจัดแบบใบสำรวจที่ดิน (ไร่–งาน–ตร.ว.) */
+:root{
+  --ink:#0F2A2C;        /* เขียวทะเลลึก — สีหลัก */
+  --ink-2:#18393B;
+  --salt:#EEF0EA;       /* ขาวเกลือทะเล — พื้นหลัง */
+  --paper:#F8F8F4;
+  --brass:#A9844C;      /* ทองเหลือง — ราคาและเส้นเน้น */
+  --brass-soft:#D8C29A;
+  --stone:#5E6B68;      /* เทาหินชายหาด — ข้อความรอง */
+  --line:#CBD1C9;
+  --line-dark:rgba(238,240,234,.16);
+  --line-green:#06C755; /* สีปุ่ม LINE */
+  --f-display:"Trirong","Noto Serif Thai",Georgia,serif;
+  --f-body:"Anuphan","IBM Plex Sans Thai","Noto Sans Thai",system-ui,sans-serif;
+  --gutter:clamp(16px,4vw,48px);
+  --maxw:1240px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--salt);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:var(--brass);font-weight:500}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;text-wrap:balance;margin:0;line-height:1.25}
+h2{font-size:clamp(1.9rem,3.6vw,2.9rem)}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- Header ---------- */
+.site-head{position:absolute;inset:0 0 auto 0;z-index:20;padding-top:env(safe-area-inset-top,0px);color:var(--salt)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:22px}
+.brand{display:flex;flex-direction:column;line-height:1;text-decoration:none}
+.brand b{font-family:var(--f-display);font-weight:400;font-size:1.45rem;letter-spacing:.01em}
+.brand b span{color:var(--brass-soft)}
+.brand small{font-size:.66rem;letter-spacing:.42em;margin-top:6px;opacity:.8}
+.nav{display:flex;gap:28px;font-size:.95rem}
+.nav a{text-decoration:none;opacity:.85;padding-block:4px;border-bottom:1px solid transparent}
+.nav a:hover{opacity:1;border-color:var(--brass-soft)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:11px 22px;font-weight:500;cursor:pointer;text-decoration:none;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-line{background:var(--line-green);color:#fff}
+.btn-brass{background:var(--brass);color:var(--paper)}
+.btn-ghost{background:transparent;border:1px solid currentColor}
+.menu-btn{display:none;background:none;border:1px solid var(--line-dark);border-radius:999px;padding:8px 14px;color:var(--salt);cursor:pointer}
+@media (max-width:900px){.nav,.site-head .btn-line{display:none}.menu-btn{display:inline-block}
+  .nav.open{display:flex;position:absolute;top:100%;left:var(--gutter);right:var(--gutter);flex-direction:column;gap:4px;background:var(--ink);padding:16px 20px;border-radius:14px}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:min(86vh,780px);display:flex;align-items:flex-end;color:var(--salt);background:var(--ink);overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,42,44,.55) 0%,rgba(15,42,44,0) 30%,rgba(15,42,44,0) 45%,rgba(15,42,44,.85) 100%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-block:150px 40px}
+.hero h1{font-size:clamp(2.3rem,6vw,4.8rem);font-weight:300;max-width:18ch;text-shadow:0 2px 24px rgba(15,42,44,.45);line-height:1.15}
+.hero h1 em{font-style:italic;color:var(--brass-soft)}
+.hero p.lead{max-width:52ch;font-size:1.08rem;opacity:.9;margin:20px 0 34px}
+.search{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;background:var(--paper);color:var(--ink);border-radius:18px;padding:8px;gap:4px;max-width:900px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.search label{display:flex;flex-direction:column;padding:8px 16px;border-right:1px solid var(--line);min-width:0}
+.search label:nth-child(3){border-right:0}
+.search span{font-size:.72rem;letter-spacing:.12em;color:var(--stone)}
+.search select{border:0;background:transparent;padding:2px 0;font-size:1rem;cursor:pointer;min-width:0}
+.search .btn{border-radius:12px;padding-inline:28px}
+@media (max-width:760px){.search{grid-template-columns:1fr}.search label{border-right:0;border-bottom:1px solid var(--line)}.search label:nth-child(3){border-bottom:0}}
+.hero-foot{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:28px;font-size:.88rem;opacity:.85}
+.hero-foot span::before{content:"◆";color:var(--brass-soft);font-size:.6rem;margin-right:8px;vertical-align:2px}
+
+/* ---------- Sections ---------- */
+section{padding-block:clamp(64px,9vw,120px)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px;margin-bottom:40px}
+.sec-head p{max-width:46ch;color:var(--stone);margin:0}
+
+/* Filter chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.chip{border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 18px;cursor:pointer;font-size:.92rem;color:var(--stone)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--salt);border-color:var(--ink)}
+.result-note{font-size:.9rem;color:var(--stone);margin:-16px 0 24px}
+.result-note button{background:none;border:0;color:var(--brass);text-decoration:underline;cursor:pointer;padding:0}
+
+/* Listing cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:36px 28px}
+.card{display:flex;flex-direction:column;cursor:pointer;background:none;border:0;padding:0;text-align:left}
+.card .ph{position:relative;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--ink-2);max-width:100%}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.card:hover .ph img{transform:scale(1.04)}
+.tag{position:absolute;top:14px;left:14px;background:rgba(248,248,244,.94);color:var(--ink);font-size:.75rem;padding:4px 12px;border-radius:999px;letter-spacing:.04em}
+.card .meta{padding-top:18px;display:flex;flex-direction:column;gap:6px}
+.card .loc{font-size:.84rem;letter-spacing:.03em;color:var(--brass)}
+.card h3{font-size:1.45rem}
+.deed{display:flex;align-items:flex-end;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:10px;padding-block:10px}
+.deed div{flex:1;text-align:center;border-right:1px dashed var(--line);line-height:1.1}
+.deed div:last-child{border-right:0}
+.deed b{display:block;font-family:var(--f-display);font-size:1.5rem;font-weight:400}
+.deed small{font-size:.72rem;color:var(--stone);letter-spacing:.08em}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:6px;flex-wrap:wrap}
+.price{font-family:var(--f-display);font-size:1.3rem;color:var(--ink)}
+.price small{font-family:var(--f-body);font-size:.78rem;color:var(--stone);margin-left:4px}
+.ppw{font-size:.82rem;color:var(--stone)}
+.empty{grid-column:1/-1;padding:48px;text-align:center;border:1px dashed var(--line);color:var(--stone);border-radius:6px}
+
+/* ---------- Destinations (dark band) ---------- */
+.band{background:var(--ink);color:var(--salt)}
+.band .sec-head p{color:rgba(238,240,234,.7)}
+.dest{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:1px;background:var(--line-dark);border:1px solid var(--line-dark)}
+.dest button{background:var(--ink);border:0;color:var(--salt);text-align:left;padding:28px 24px;cursor:pointer;display:flex;flex-direction:column;gap:6px;transition:background .25s}
+.dest button:hover{background:var(--ink-2)}
+.dest b{font-family:var(--f-display);font-weight:400;font-size:1.6rem}
+.dest small{color:var(--brass-soft);font-size:.82rem}
+.dest span{font-size:.85rem;opacity:.65}
+
+/* ---------- Promise ---------- */
+.promise{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,6vw,90px);align-items:center}
+.promise .ph{aspect-ratio:4/5;border-radius:4px;overflow:hidden;max-width:100%}
+.promise .ph img{width:100%;height:100%;object-fit:cover}
+.promise ul{list-style:none;padding:0;margin:32px 0 0;display:flex;flex-direction:column;gap:26px}
+.promise li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px}
+.promise li i{width:44px;height:44px;border:1px solid var(--brass);border-radius:50%;display:grid;place-items:center;font-style:normal;color:var(--brass);font-family:var(--f-display)}
+.promise li b{display:block;font-weight:500;font-size:1.06rem}
+.promise li p{margin:2px 0 0;color:var(--stone)}
+@media (max-width:860px){.promise{grid-template-columns:1fr}.promise .ph{aspect-ratio:16/10}}
+
+/* ---------- Steps ---------- */
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;counter-reset:s;border-top:1px solid var(--line)}
+.steps li{list-style:none;padding:26px 22px 0 0;position:relative}
+.steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:var(--f-display);font-size:2.4rem;color:var(--brass);display:block;line-height:1;margin-bottom:14px}
+.steps li::after{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--brass)}
+.steps b{display:block;font-weight:500}
+.steps p{margin:4px 0 0;color:var(--stone);font-size:.93rem}
+.steps{padding:0;margin:0}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:32px}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+
+/* ---------- Sell / Contact ---------- */
+.contact{background:var(--paper);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,6vw,90px)}
+.contact-info dl{margin:30px 0 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 24px}
+.contact-info dt{color:var(--stone);font-size:.88rem}
+.contact-info dd{margin:0;font-weight:500;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.copy{border:1px solid var(--line);background:none;border-radius:999px;padding:2px 10px;font-size:.75rem;cursor:pointer;color:var(--stone)}
+form.lead{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+form.lead .full{grid-column:1/-1}
+form.lead label{display:flex;flex-direction:column;gap:6px;font-size:.85rem;color:var(--stone)}
+form.lead input,form.lead select,form.lead textarea{border:0;border-bottom:1px solid var(--line);background:transparent;padding:10px 2px;font-size:1rem;color:var(--ink);border-radius:0}
+form.lead input:focus,form.lead select:focus,form.lead textarea:focus{outline:none;border-color:var(--brass)}
+form.lead textarea{resize:vertical;min-height:90px}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{flex-direction:row;border:1px solid var(--line);border-radius:999px;padding:8px 18px;cursor:pointer;color:var(--ink);font-size:.95rem}
+.seg input:checked+label{background:var(--ink);color:var(--salt);border-color:var(--ink)}
+.seg input:focus-visible+label{outline:2px solid var(--brass);outline-offset:2px}
+.form-msg{grid-column:1/-1;padding:14px 18px;border-radius:8px;background:var(--salt);border-left:3px solid var(--brass);font-size:.93rem}
+.form-msg.loading{border-color:var(--stone);color:var(--stone)}
+.form-msg.error{border-color:#e05252;color:#e05252}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+@media (max-width:520px){form.lead{grid-template-columns:1fr}}
+
+/* ---------- Footer ---------- */
+footer{background:var(--ink);color:rgba(238,240,234,.7);font-size:.88rem;padding-bottom:env(safe-area-inset-bottom,0px)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-block:36px}
+footer .brand{color:var(--salt)}
+
+/* ---------- Floating LINE (mobile) ---------- */
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;box-shadow:0 10px 30px rgba(0,0,0,.25);display:none}
+@media (max-width:900px){.fab{display:inline-flex}}
+
+/* ---------- Modal ---------- */
+dialog{border:0;padding:0;width:min(1000px,calc(100% - 32px));max-height:calc(100% - 32px);border-radius:8px;background:var(--paper);color:var(--ink)}
+dialog::backdrop{background:rgba(10,28,30,.7)}
+.m-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+.m-grid .ph{min-height:100%;max-width:100%}
+.m-grid .ph img{width:100%;height:100%;object-fit:cover;min-height:280px}
+.m-body{padding:32px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.m-close{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(248,248,244,.95);cursor:pointer;font-size:1.2rem;z-index:2}
+.specs{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 20px;margin:0;font-size:.93rem}
+.specs dt{color:var(--stone)}
+.specs dd{margin:0}
+.calc{background:var(--salt);border-radius:6px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.calc .row{display:flex;justify-content:space-between;gap:10px;font-size:.92rem;flex-wrap:wrap}
+.calc .total{font-family:var(--f-display);font-size:1.5rem;color:var(--ink)}
+.calc input{width:120px;border:1px solid var(--line);border-radius:6px;padding:4px 8px;background:var(--paper)}
+.feat{display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:0;list-style:none}
+.feat li{font-size:.8rem;border:1px solid var(--line);border-radius:999px;padding:3px 12px;color:var(--stone)}
+@media (max-width:760px){.m-grid{grid-template-columns:1fr}.m-grid .ph img{min-height:220px;max-height:260px}.m-body{padding:22px}}
+.sample-note{font-size:.78rem;color:var(--stone)}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="ทิพย์มงคล555 Property หน้าแรก">
+      <b>ทิพย์มงคล<span>555</span></b>
+      <small>PROPERTY</small>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#listings">ประกาศขาย</a>
+      <a href="#places">ทำเล</a>
+      <a href="#why">มาตรฐานของเรา</a>
+      <a href="#steps">ขั้นตอนการซื้อ</a>
+      <a href="#contact">ฝากขาย / ติดต่อ</a>
+    </nav>
+    <!-- แก้ไขลิงก์ LINE ให้ชี้ไปที่ LINE OA ของคุณจริง ๆ -->
+    <a class="btn btn-line" href="https://line.me/ti/p/~@tmk555" target="_blank">แอดไลน์ @tmk555</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">เมนู</button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO — เปลี่ยนรูป Background เป็นโดรนวิวทะเลจริงสวยๆ -->
+  <section class="hero" style="padding:0">
+    <img class="bg" src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?auto=format&fit=crop&q=80&w=1920" alt="ภาพวิวมุมสูงภูเขาสลับซับซ้อน">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--brass-soft)">ที่ดินริมทะเล · พูลวิลล่า · บ้านพักตากอากาศ</p>
+      <h1>ที่ดินริมทะเล<br><em>ตรวจโฉนดแล้ว</em>ทุกแปลง</h1>
+      <p class="lead">เราคัดเฉพาะแปลงที่มีโฉนด ทางเข้าออกชัดเจน และถ่ายภาพโดรนจากหน้างานจริง ทั้งอันดามัน อ่าวไทย และวิวภูเขา</p>
+      <form class="search" id="search">
+        <label for="qLoc"><span>ทำเล</span>
+          <select id="qLoc"><option value="">ทุกทำเล</option></select>
+        </label>
+        <label for="qType"><span>ประเภท</span>
+          <select id="qType">
+            <option value="">ทุกประเภท</option>
+            <option value="sea">ที่ดินติดทะเล</option>
+            <option value="villa">พูลวิลล่า / บ้านพัก</option>
+            <option value="hill">ที่ดินวิวภูเขา</option>
+          </select>
+        </label>
+        <label for="qBudget"><span>งบประมาณ</span>
+          <select id="qBudget">
+            <option value="">ไม่จำกัด</option>
+            <option value="0-20">ไม่เกิน 20 ล้าน</option>
+            <option value="20-40">20 – 40 ล้าน</option>
+            <option value="40-80">40 – 80 ล้าน</option>
+            <option value="80-9999">80 ล้านขึ้นไป</option>
+          </select>
+        </label>
+        <button class="btn btn-brass" type="submit">ค้นหาแปลง</button>
+      </form>
+      <div class="hero-foot">
+        <span>ขายเฉพาะที่ดินมีโฉนด (น.ส.4 จ.)</span>
+        <span>ภาพโดรนจากหน้างานทุกแปลง</span>
+        <span>ดูแลจนโอนที่สำนักงานที่ดิน</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LISTINGS -->
+  <section id="listings">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">ประกาศขายล่าสุด</p>
+          <h2>แปลงคัดพิเศษ</h2>
+        </div>
+        <p>ขนาดแสดงแบบเดียวกับในโฉนด คือ ไร่ – งาน – ตารางวา กดที่แปลงเพื่อดูรายละเอียดและคำนวณราคา</p>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="กรองตามประเภท">
+        <button class="chip" data-type="" aria-pressed="true">ทั้งหมด</button>
+        <button class="chip" data-type="sea" aria-pressed="false">ที่ดินติดทะเล</button>
+        <button class="chip" data-type="villa" aria-pressed="false">พูลวิลล่า / บ้านพัก</button>
+        <button class="chip" data-type="hill" aria-pressed="false">ที่ดินวิวภูเขา</button>
+      </div>
+      <p class="result-note" id="resultNote" hidden></p>
+      <div class="grid" id="grid"></div>
+      <p class="sample-note" style="margin-top:28px">* สามารถเปลี่ยนรูปภาพและข้อมูลแปลงเหล่านี้ได้ที่โค้ดส่วน &lt;script&gt;</p>
+    </div>
+  </section>
+
+  <!-- PLACES -->
+  <section class="band" id="places">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow" style="color:var(--brass-soft)">ทำเลที่เราดูแล</p>
+          <h2>จากอันดามันถึงเขาใหญ่</h2>
+        </div>
+        <p>ทีมของเราลงพื้นที่จริงในทุกทำเล เลือกจังหวัดเพื่อดูแปลงที่ขายอยู่</p>
+      </div>
+      <div class="dest" id="dest"></div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why">
+    <div class="wrap promise">
+      <!-- เปลี่ยนรูปประกอบหน้ามาตรฐานเป็นวิวชายหาดของจริง -->
+      <div class="ph"><img src="https://images.unsplash.com/photo-1596819447333-e99e4bbfa799?auto=format&fit=crop&q=80&w=800" alt="ชายหาดยามเช้ากับต้นมะพร้าว"></div>
+      <div>
+        <p class="eyebrow">มาตรฐานทิพย์มงคล555</p>
+        <h2>ก่อนลงประกาศ เราตรวจให้ครบ 3 เรื่อง</h2>
+        <ul>
+          <li><i>๑</i><div><b>เอกสารสิทธิ์</b><p>ตรวจสารบัญโฉนดที่สำนักงานที่ดิน ดูภาระจำนองและชื่อเจ้าของให้ตรงกับผู้ขาย</p></div></li>
+          <li><i>๒</i><div><b>ทางเข้าออกและสาธารณูปโภค</b><p>ยืนยันว่ามีทางสาธารณะหรือภาระจำยอม รวมถึงระยะไฟฟ้าและประปาถึงแปลง</p></div></li>
+          <li><i>๓</i><div><b>หน้างานจริง</b><p>ถ่ายโดรนมุมสูงและวัดหน้ากว้างติดถนนหรือติดหาด ให้ภาพตรงกับที่ไปเห็นจริง</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section id="steps" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">ขั้นตอนการซื้อ</p>
+          <h2>จากทักไลน์ถึงวันโอน</h2>
+        </div>
+      </div>
+      <ol class="steps">
+        <li><b>บอกงบและทำเล</b><p>ทักไลน์หรือกรอกฟอร์ม บอกงบ ขนาด และจังหวัดที่สนใจ</p></li>
+        <li><b>รับรายการแปลง</b><p>ส่งแปลงที่ตรงโจทย์พร้อมภาพโดรนและสำเนาโฉนด</p></li>
+        <li><b>นัดดูแปลงจริง</b><p>ทีมงานพาไปดูหน้างาน ชี้หมุดเขตที่ดินให้เห็น</p></li>
+        <li><b>ทำสัญญาจะซื้อจะขาย</b><p>ตกลงราคา เงินมัดจำ และวันโอนเป็นลายลักษณ์อักษร</p></li>
+        <li><b>โอนกรรมสิทธิ์</b><p>ไปสำนักงานที่ดินด้วยกัน ชำระค่าธรรมเนียมและรับโฉนด</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <p class="eyebrow">ติดต่อ / ฝากขาย</p>
+        <h2>มีที่ดินริมทะเลอยากขาย หรือกำลังหาแปลงในใจ</h2>
+        <p style="color:var(--stone);max-width:44ch">ฝากรายละเอียดไว้ ทีมงานจะติดต่อกลับภายในวันทำการ หรือทักไลน์เพื่อคุยได้เร็วที่สุด</p>
+        <dl>
+          <!-- แก้ไข LINE และ เบอร์โทร ให้เป็นของจริงตรงนี้ -->
+          <dt>LINE</dt><dd><span id="lineId">@tmk555</span><button class="copy" data-copy="lineId">คัดลอก</button></dd>
+          <dt>โทร</dt><dd><span id="tel">081-234-5678</span><button class="copy" data-copy="tel">คัดลอก</button></dd>
+          <dt>เว็บไซต์</dt><dd>tmk555.com</dd>
+          <dt>เวลาทำการ</dt><dd>ทุกวัน 09:00 – 18:00 น.</dd>
+        </dl>
+      </div>
+      <form class="lead" id="leadForm" novalidate>
+        <div class="full">
+          <p style="margin:0 0 8px;font-size:.85rem;color:var(--stone)">ต้องการ</p>
+          <div class="seg">
+            <input type="radio" name="intent" id="iBuy" value="ซื้อ" checked><label for="iBuy">หาซื้อที่ดิน</label>
+            <input type="radio" name="intent" id="iSell" value="ฝากขาย"><label for="iSell">ฝากขายที่ดิน</label>
+          </div>
+        </div>
+        <label for="fName">ชื่อ<input id="fName" name="name" required autocomplete="name"></label>
+        <label for="fPhone">เบอร์โทร<input id="fPhone" name="phone" required inputmode="tel" autocomplete="tel"></label>
+        <label for="fArea">ทำเลที่สนใจ<select id="fArea" name="area"><option>ยังไม่แน่ใจ</option></select></label>
+        <label for="fBudget">งบประมาณ<select id="fBudget" name="budget"><option>ไม่เกิน 20 ล้าน</option><option>20 – 40 ล้าน</option><option>40 – 80 ล้าน</option><option>80 ล้านขึ้นไป</option></select></label>
+        <label class="full" for="fMsg">รายละเอียดเพิ่มเติม<textarea id="fMsg" name="message" placeholder="เช่น ต้องการติดหาด หน้ากว้าง 40 เมตรขึ้นไป"></textarea></label>
+        <div class="full"><button class="btn btn-brass" type="submit">ส่งข้อมูลให้ทีมงาน</button></div>
+        <p class="form-msg" id="formMsg" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><b>ทิพย์มงคล<span>555</span></b><small>PROPERTY</small></a>
+    <span>© 2569 ทิพย์มงคล555 Property · tmk555.com</span>
+  </div>
+</footer>
+
+<a class="btn btn-line fab" href="https://line.me/ti/p/~@tmk555" target="_blank">ทักไลน์</a>
+
+<dialog id="modal" aria-labelledby="mTitle">
+  <button class="m-close" id="mClose" aria-label="ปิด">✕</button>
+  <div class="m-grid">
+    <div class="ph"><img id="mImg" alt=""></div>
+    <div class="m-body">
+      <p class="eyebrow" id="mLoc"></p>
+      <h3 id="mTitle" style="font-size:1.8rem"></h3>
+      <div class="deed" id="mDeed"></div>
+      <dl class="specs" id="mSpecs"></dl>
+      <ul class="feat" id="mFeat"></ul>
+      <div class="calc" id="mCalc"></div>
+      <a class="btn btn-line" href="https://line.me/ti/p/~@tmk555" target="_blank" id="mCta">สอบถามแปลงนี้ทางไลน์</a>
+    </div>
+  </div>
+</dialog>
+
+<script>
+/* ===== 1. ตั้งค่า URL ของ Google Apps Script สำหรับรับข้อมูลฟอร์ม ===== */
+// วิธีทำ: นำโค้ด Google Apps Script ไป Deploy เป็น Web App แล้วนำ URL มาวางที่ตัวแปรด้านล่างนี้
+const GAS_URL = "https://script.google.com/macros/s/AKfycb.../exec"; 
+
+/* ===== 2. ข้อมูลแปลงอสังหาฯ =====
+   เปลี่ยนรูปภาพจากรูปวาดเป็นรูปถ่ายโดรนของจริงได้ที่ช่อง img: "URL_รูปภาพ" */
+const LISTINGS = [
+  {id:1,type:"sea",prov:"กระบี่",area:"อ่าวนาง",title:"ที่ดินติดหาดส่วนตัว วิวเขาหินปูน",rai:3,ngan:2,wa:40,ppw:85000,
+   img:"https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=800",
+   deed:"โฉนด น.ส.4 จ.",road:"ถนนลาดยาง กว้าง 8 ม.",util:"ไฟฟ้า 3 เฟส · ประปาส่วนภูมิภาค",front:"ติดหาด 62 ม.",feat:["ติดหาดทราย","วิวพระอาทิตย์ตก","เหมาะทำรีสอร์ต"]},
+  
+  {id:2,type:"villa",prov:"ภูเก็ต",area:"กมลา",title:"พูลวิลล่าวิวทะเล 4 ห้องนอน",rai:0,ngan:2,wa:10,total:38500000,
+   img:"https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800",
+   deed:"โฉนด น.ส.4 จ.",road:"ถนนคอนกรีต กว้าง 6 ม.",util:"ไฟฟ้า · ประปา · อินเทอร์เน็ตไฟเบอร์",front:"พื้นที่ใช้สอย 420 ตร.ม.",feat:["สระว่ายน้ำ 12 ม.","เฟอร์นิเจอร์ครบ","ห่างหาด 900 ม."]},
+  
+  {id:3,type:"sea",prov:"เกาะสมุย",area:"เชิงมน",title:"ที่ดินบนเนิน เห็นทะเล 180 องศา",rai:1,ngan:0,wa:50,ppw:45000,
+   img:"https://images.unsplash.com/photo-1581337204873-ef36aa186caa?auto=format&fit=crop&q=80&w=800",
+   deed:"โฉนด น.ส.4 จ.",road:"ถนนลาดยาง กว้าง 6 ม.",util:"ไฟฟ้าถึงหน้าแปลง",front:"หน้ากว้างติดถนน 38 ม.",feat:["วิวทะเลไม่มีบัง","ความสูง 45 ม. จากน้ำทะเล","ใกล้สนามบิน 10 นาที"]},
+  
+  {id:4,type:"villa",prov:"หัวหิน",area:"ปราณบุรี",title:"บ้านพักตากอากาศริมหาด 3 ห้องนอน",rai:0,ngan:3,wa:0,total:29900000,
+   img:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
+   deed:"โฉนด น.ส.4 จ.",road:"ถนนลาดยาง กว้าง 6 ม.",util:"ไฟฟ้า · ประปา",front:"พื้นที่ใช้สอย 280 ตร.ม.",feat:["เดินลงหาดได้","สวนมะพร้าว","จากกรุงเทพฯ 3 ชม."]},
+  
+  {id:5,type:"hill",prov:"เขาใหญ่",area:"ปากช่อง",title:"ที่ดินวิวภูเขา อากาศเย็นทั้งปี",rai:5,ngan:0,wa:0,ppw:9500,
+   img:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800",
+   deed:"โฉนด น.ส.4 จ.",road:"ถนนลาดยาง กว้าง 8 ม.",util:"ไฟฟ้า · บ่อบาดาล",front:"หน้ากว้างติดถนน 80 ม.",feat:["วิวเขาซ้อนชั้น","มีลำธารผ่าน","เหมาะทำบ้านพักหรือแคมป์"]},
+  
+  {id:6,type:"sea",prov:"พังงา",area:"เขาหลัก",title:"ที่ดินติดทะเลอันดามัน แปลงใหญ่",rai:8,ngan:1,wa:20,ppw:18000,
+   img:"https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&q=80&w=800",
+   deed:"โฉนด น.ส.4 จ.",road:"ทางสาธารณะ กว้าง 6 ม.",util:"ไฟฟ้าห่าง 200 ม.",front:"ติดหาด 110 ม.",feat:["หาดยาวเงียบสงบ","เหมาะพัฒนาโครงการ","ใกล้ถนนเพชรเกษม"]}
+];
+const PLACE_NOTE = {"กระบี่":"อันดามัน","ภูเก็ต":"อันดามัน","พังงา":"อันดามัน","เกาะสมุย":"อ่าวไทย","หัวหิน":"อ่าวไทย","เขาใหญ่":"วิวภูเขา"};
+
+/* ===== 3. ส่วนประมวลผลการทำงานของเว็บ ===== */
+const toWa = l => l.rai*400 + l.ngan*100 + l.wa;
+const priceOf = l => l.total ?? toWa(l)*l.ppw;
+const baht = n => n.toLocaleString("th-TH");
+const million = n => (n/1e6).toLocaleString("th-TH",{maximumFractionDigits:2}) + " ล้านบาท";
+const typeName = {sea:"ที่ดินติดทะเล",villa:"พูลวิลล่า / บ้านพัก",hill:"ที่ดินวิวภูเขา"};
+
+const $=s=>document.querySelector(s);
+const state={type:"",prov:"",budget:""};
+const deedHTML=l=>`<div><b class="num">${l.rai}</b><small>ไร่</small></div><div><b class="num">${l.ngan}</b><small>งาน</small></div><div><b class="num">${l.wa}</b><small>ตร.ว.</small></div>`;
+
+function renderGrid(){
+  const list=LISTINGS.filter(l=>{
+    if(state.type&&l.type!==state.type)return false;
+    if(state.prov&&l.prov!==state.prov)return false;
+    if(state.budget){const[a,b]=state.budget.split("-").map(Number),m=priceOf(l)/1e6;if(m<a||m>=b)return false}
+    return true});
+  $("#grid").innerHTML=list.length?list.map(l=>`
+    <button class="card" data-id="${l.id}" aria-label="ดูรายละเอียด ${l.title}">
+      <div class="ph"><img src="${l.img}" alt="${l.title}" loading="lazy"><span class="tag">${typeName[l.type]}</span></div>
+      <div class="meta">
+        <span class="loc">${l.prov} · ${l.area}</span>
+        <h3>${l.title}</h3>
+        <div class="deed">${deedHTML(l)}</div>
+        <div class="price-row"><span class="price num">${million(priceOf(l))}</span>
+        <span class="ppw num">${l.ppw?baht(l.ppw)+" บ./ตร.ว.":l.front}</span></div>
+      </div>
+    </button>`).join(""):`<div class="empty">ยังไม่มีแปลงที่ตรงกับเงื่อนไขนี้ ลองเปลี่ยนงบหรือทำเล หรือฝากความต้องการไว้ที่ฟอร์มด้านล่าง</div>`;
+  const parts=[state.prov,state.budget&&$("#qBudget").selectedOptions[0].text].filter(Boolean);
+  const note=$("#resultNote");
+  note.hidden=!parts.length;
+  if(parts.length)note.innerHTML=`พบ ${list.length} แปลง สำหรับ ${parts.join(" · ")} — <button id="clearF">ล้างตัวกรอง</button>`;
+  document.querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed",b.dataset.type===state.type));
+}
+
+function renderPlaces(){
+  const provs=[...new Set(LISTINGS.map(l=>l.prov))];
+  $("#dest").innerHTML=provs.map(p=>{const n=LISTINGS.filter(l=>l.prov===p);
+    const min=Math.min(...n.map(priceOf));
+    return `<button data-prov="${p}"><small>${PLACE_NOTE[p]||""}</small><b>${p}</b><span>${n.length} แปลง · เริ่ม ${million(min)}</span></button>`}).join("");
+  const opts=provs.map(p=>`<option value="${p}">${p}</option>`).join("");
+  $("#qLoc").insertAdjacentHTML("beforeend",opts);
+  $("#fArea").insertAdjacentHTML("beforeend",opts.replace(/ value="[^"]*"/g,""));
+}
+
+function openModal(id){
+  const l=LISTINGS.find(x=>x.id==id),m=$("#modal");
+  $("#mImg").src=l.img; $("#mImg").alt=l.title;
+  $("#mLoc").textContent=`${l.prov} · ${l.area} · ${typeName[l.type]}`;
+  $("#mTitle").textContent=l.title;
+  $("#mDeed").innerHTML=deedHTML(l);
+  const wa=toWa(l);
+  $("#mSpecs").innerHTML=[["เอกสารสิทธิ์",l.deed],["เนื้อที่รวม",`${baht(wa)} ตร.ว. (${baht(wa*4)} ตร.ม.)`],["ทางเข้าออก",l.road],["สาธารณูปโภค",l.util],["หน้ากว้าง / พื้นที่",l.front]]
+    .map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join("");
+  $("#mFeat").innerHTML=l.feat.map(f=>`<li>${f}</li>`).join("");
+  const calc=$("#mCalc");
+  if(l.ppw){
+    calc.innerHTML=`<div class="row"><span>ราคาต่อตารางวา</span><span class="num">${baht(l.ppw)} บาท</span></div>
+      <div class="row"><label for="cWa">ต้องการซื้อ (ตร.ว.)</label><input id="cWa" type="number" min="100" max="${wa}" step="10" value="${wa}" class="num"></div>
+      <div class="row" style="align-items:baseline"><span>ราคาประมาณ</span><span class="total num" id="cTotal"></span></div>
+      <span class="sample-note">แบ่งขายขั้นต่ำ 100 ตร.ว. ราคานี้ยังไม่รวมค่าธรรมเนียมโอน</span>`;
+    const upd=()=>{const v=Math.min(Math.max(+$("#cWa").value||0,0),wa);$("#cTotal").textContent=baht(v*l.ppw)+" บาท"};
+    $("#cWa").addEventListener("input",upd);upd();
+  }else{
+    calc.innerHTML=`<div class="row" style="align-items:baseline"><span>ราคาขาย</span><span class="total num">${baht(l.total)} บาท</span></div>
+      <div class="row"><span>เฉลี่ยต่อตารางวา (รวมบ้าน)</span><span class="num">${baht(Math.round(l.total/wa))} บาท</span></div>`;
+  }
+  m.showModal();
+}
+
+/* ===== Events ===== */
+$("#grid").addEventListener("click",e=>{const c=e.target.closest(".card");if(c)openModal(c.dataset.id)});
+$("#resultNote").addEventListener("click",e=>{if(e.target.id==="clearF"){state.prov=state.budget="";$("#qLoc").value=$("#qBudget").value="";renderGrid()}});
+$("#chips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;state.type=b.dataset.type;$("#qType").value=state.type;renderGrid()});
+$("#dest").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;state.prov=b.dataset.prov;$("#qLoc").value=state.prov;renderGrid();$("#listings").scrollIntoView()});
+$("#search").addEventListener("submit",e=>{e.preventDefault();state.prov=$("#qLoc").value;state.type=$("#qType").value;state.budget=$("#qBudget").value;renderGrid();$("#listings").scrollIntoView()});
+$("#mClose").addEventListener("click",()=>$("#modal").close());
+$("#modal").addEventListener("click",e=>{if(e.target.id==="modal")e.target.close()});
+$("#mCta").addEventListener("click",()=>$("#modal").close());
+$("#menuBtn").addEventListener("click",e=>{const n=$("#nav"),o=n.classList.toggle("open");e.currentTarget.setAttribute("aria-expanded",o)});
+$("#nav").addEventListener("click",e=>{if(e.target.tagName==="A")$("#nav").classList.remove("open")});
+document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",()=>{
+  const t=$("#"+b.dataset.copy).textContent,done=()=>{b.textContent="คัดลอกแล้ว";setTimeout(()=>b.textContent="คัดลอก",1500)};
+  navigator.clipboard?.writeText(t).then(done).catch(()=>{const r=document.createRange();r.selectNodeContents($("#"+b.dataset.copy));getSelection().removeAllRanges();getSelection().addRange(r)})}));
+
+/* ===== ระบบส่งแบบฟอร์มไปยัง Google Sheets ===== */
+$("#leadForm").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const form = e.target;
+  const msg = $("#formMsg");
+  const n = $("#fName").value.trim();
+  const p = $("#fPhone").value.trim();
+  const btn = form.querySelector('button[type="submit"]');
+  
+  msg.hidden = false;
+  msg.className = "form-msg"; // รีเซ็ต class
+  
+  if(!n || !p){
+    msg.classList.add("error");
+    msg.textContent = "กรุณากรอกชื่อและเบอร์โทร เพื่อให้ทีมงานติดต่อกลับได้";
+    return;
+  }
+  
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+  
+  // ตรวจสอบว่าใส่ URL จริงหรือยัง
+  if (!GAS_URL || GAS_URL.includes("AKfycb.../exec")) {
+    msg.textContent = `(ระบบจำลอง) ขอบคุณคุณ${n} ข้อมูลของคุณคือ: สนใจ${data.intent} เบอร์โทร ${p} (คุณต้องนำ Web App URL ของ Google Script มาใส่ในโค้ดก่อนจึงจะส่งเข้า Sheet ได้จริง)`;
+    return;
+  }
+
+  try {
+    msg.classList.add("loading");
+    msg.textContent = "กำลังส่งข้อมูล...";
+    btn.disabled = true;
+    
+    // ส่งข้อมูลไปที่ Google Apps Script
+    await fetch(GAS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    
+    msg.classList.remove("loading");
+    msg.textContent = `ขอบคุณคุณ${n} ทีมงานได้รับข้อมูลแล้ว และจะติดต่อไปที่เบอร์ ${p} โดยเร็วที่สุดครับ`;
+    form.reset();
+  } catch (error) {
+    msg.classList.remove("loading");
+    msg.classList.add("error");
+    msg.textContent = "เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง หรือติดต่อทาง LINE ครับ";
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+/* ===== Init ===== */
+renderPlaces();renderGrid();
+</script>
+</body>
+</html>
