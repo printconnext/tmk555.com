@@ -146,7 +146,10 @@ export default function PropertyPage() {
             <Link href="/#places">ทำเล</Link>
             <Link href="/#contact">ฝากขาย / ติดต่อ</Link>
           </nav>
-          <a className="btn btn-line" href="https://line.me/ti/p/~@tmk555" target="_blank" rel="noreferrer">แอดไลน์ @tmk555</a>
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <a className="btn btn-tel" href="tel:0977916555">📞 097-791-6555</a>
+            <a className="btn btn-line" href="https://line.me/ti/p/~@tmk555" target="_blank" rel="noreferrer">แอดไลน์ @tmk555</a>
+          </div>
         </div>
       </header>
 
@@ -206,7 +209,10 @@ export default function PropertyPage() {
                   )}
                 </div>
                 
-                <a className="btn btn-brass" href="https://line.me/ti/p/~@tmk555" target="_blank" rel="noreferrer" style={{ width: '100%', textAlign: 'center', display: 'block' }}>สอบถามแปลงนี้ทางไลน์</a>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <a className="btn btn-tel" href="tel:0977916555" style={{ width: '100%', textAlign: 'center', display: 'block' }}>📞 โทรสอบถาม: 097-791-6555</a>
+                  <a className="btn btn-brass" href="https://line.me/ti/p/~@tmk555" target="_blank" rel="noreferrer" style={{ width: '100%', textAlign: 'center', display: 'block' }}>💬 สอบถามแปลงนี้ทางไลน์</a>
+                </div>
               </div>
             </div>
 

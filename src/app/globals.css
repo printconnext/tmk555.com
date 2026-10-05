@@ -47,6 +47,7 @@ h2{font-size:clamp(1.9rem,3.6vw,2.9rem)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:11px 22px;font-weight:500;cursor:pointer;text-decoration:none;transition:transform .2s,background .2s}
 .btn:hover{transform:translateY(-1px)}
 .btn-line{background:var(--line-green);color:#fff}
+.btn-tel{background:#1f2937;color:#fff}
 .btn-brass{background:var(--brass);color:var(--paper)}
 .btn-ghost{background:transparent;border:1px solid currentColor}
 .menu-btn{display:none;background:none;border:1px solid var(--line-dark);border-radius:999px;padding:8px 14px;color:var(--salt);cursor:pointer}

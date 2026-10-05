@@ -135,7 +135,10 @@ export default function Page() {
             <a href="#steps">ขั้นตอนการซื้อ</a>
             <a href="#contact">ฝากขาย / ติดต่อ</a>
           </nav>
-          <a className="btn btn-line" href="https://line.me/ti/p/~@tmk555" target="_blank" rel="noreferrer">แอดไลน์ @tmk555</a>
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <a className="btn btn-tel" href="tel:0977916555">📞 097-791-6555</a>
+            <a className="btn btn-line" href="https://line.me/ti/p/~@tmk555" target="_blank" rel="noreferrer">แอดไลน์ @tmk555</a>
+          </div>
           <button className="menu-btn" aria-expanded={navOpen} onClick={() => setNavOpen(!navOpen)}>เมนู</button>
         </div>
       </header>
@@ -331,7 +334,10 @@ export default function Page() {
         </div>
       </footer>
 
-      <a className="btn btn-line fab" href="https://line.me/ti/p/~@tmk555" target="_blank" rel="noreferrer">ทักไลน์</a>
+      <div className="fab" style={{ display: 'flex', flexDirection: 'column', gap: '8px', bottom: '24px', right: '24px', position: 'fixed', zIndex: 100 }}>
+        <a className="btn btn-tel" href="tel:0977916555" style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>📞 โทรเลย</a>
+        <a className="btn btn-line" href="https://line.me/ti/p/~@tmk555" target="_blank" rel="noreferrer" style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>แอดไลน์</a>
+      </div>
 
 
     </>
