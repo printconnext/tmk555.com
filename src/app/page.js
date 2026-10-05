@@ -330,7 +330,7 @@ export default function Page() {
       <footer>
         <div className="wrap">
           <a className="brand" href="#top"><b>ทิพย์มงคล<span>555</span></b><small>PROPERTY</small></a>
-          <span>© 2569 ทิพย์มงคล555 Property · <Link href="/admin" style={{ color: 'inherit', textDecoration: 'none' }}>tmk555.com</Link></span>
+          <span>© 2569 ทิพย์มงคล555 Property · <Link href="/admin" style={{ color: 'inherit', textDecoration: 'none' }}>tmk555.com</Link> · โทร: 097-791-6555</span>
         </div>
       </footer>
 
