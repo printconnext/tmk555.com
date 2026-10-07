@@ -18,7 +18,7 @@ export default function AdminPage() {
   const defaultForm = {
     title: '', prov: '', area: '', type: ['sea'], 
     rai: 0, ngan: 0, wa: 0, ppw: '', total: '', 
-    road: '', util: '', front: '', feat: '', deed: 'โฉนด น.ส.4 จ.'
+    road: '', util: '', front: '', feat: '', deed: 'โฉนด น.ส.4 จ.', map_url: ''
   };
   
   const [form, setForm] = useState(defaultForm);
@@ -175,7 +175,8 @@ export default function AdminPage() {
       feat: item.feat ? item.feat.join(', ') : '', 
       deed: item.deed || 'โฉนด น.ส.4 จ.',
       img: item.img || '',
-      gallery: item.gallery || []
+      gallery: item.gallery || [],
+      map_url: item.map_url || ''
     });
     // เคลียร์ไฟล์ที่รออัปโหลด
     setImageFile(null);
@@ -253,7 +254,8 @@ export default function AdminPage() {
         total: form.total === '' ? null : Number(form.total),
         img: imgUrl,
         gallery: galleryUrls,
-        feat: form.feat.split(',').map(f => f.trim()).filter(Boolean)
+        feat: form.feat.split(',').map(f => f.trim()).filter(Boolean),
+        map_url: form.map_url || null
       };
 
       if (mode === 'edit') {
@@ -559,6 +561,11 @@ export default function AdminPage() {
           <div style={{ marginBottom: '16px' }}>
             <label>จุดเด่น (คั่นด้วยเครื่องหมายจุลภาค ,)</label>
             <input type="text" name="feat" value={form.feat} onChange={handleChange} className="admin-input" />
+          </div>
+
+          <div style={{ marginBottom: '16px' }}>
+            <label>ลิงก์ Google Maps (ถ้ามี)</label>
+            <input type="url" name="map_url" placeholder="https://maps.app.goo.gl/..." value={form.map_url} onChange={handleChange} className="admin-input" />
           </div>
 
           <div className="admin-grid">

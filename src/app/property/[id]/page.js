@@ -184,6 +184,16 @@ export default function PropertyPage() {
                   <dt>ทางเข้าออก</dt><dd>{property.road}</dd>
                   <dt>สาธารณูปโภค</dt><dd>{property.util}</dd>
                   <dt>หน้ากว้าง / พื้นที่</dt><dd>{property.front}</dd>
+                  {property.map_url && (
+                    <>
+                      <dt>พิกัด</dt>
+                      <dd>
+                        <a href={property.map_url} target="_blank" rel="noreferrer" style={{ color: 'var(--brass)', textDecoration: 'underline', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                          📍 ดูบน Google Maps
+                        </a>
+                      </dd>
+                    </>
+                  )}
                 </dl>
                 <ul className="feat" style={{ margin: '24px 0' }}>
                   {property.feat && property.feat.map((f, i) => <li key={i}>{f}</li>)}
