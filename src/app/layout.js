@@ -1,8 +1,8 @@
-import { Trirong, Anuphan } from 'next/font/google';
+import { Sarabun, Anuphan } from 'next/font/google';
 import './globals.css';
 
-const trirong = Trirong({
-  weight: ['300', '400', '600'],
+const sarabun = Sarabun({
+  weight: ['300', '400', '500', '600'],
   style: ['normal', 'italic'],
   subsets: ['thai', 'latin'],
   variable: '--f-display',
@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="th" className={`${trirong.variable} ${anuphan.variable}`}>
+    <html lang="th" className={`${sarabun.variable} ${anuphan.variable}`}>
       <body>
         <script
           type="application/ld+json"

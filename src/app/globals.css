@@ -14,7 +14,7 @@
   --line:#CBD1C9;
   --line-dark:rgba(238,240,234,.16);
   --line-green:#06C755; /* สีปุ่ม LINE */
-  --f-display:"Trirong","Noto Serif Thai",Georgia,serif;
+  --f-display:"Sarabun","Noto Serif Thai",Georgia,serif;
   --f-body:"Anuphan","IBM Plex Sans Thai","Noto Sans Thai",system-ui,sans-serif;
   --gutter:clamp(16px,4vw,48px);
   --maxw:1240px;
