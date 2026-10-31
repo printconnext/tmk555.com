@@ -29,7 +29,10 @@ export const PLACE_NOTE = {"กระบี่":"อันดามัน","ภ�
 export const toWa = l => l.rai * 400 + l.ngan * 100 + l.wa;
 export const priceOf = l => l.total ?? toWa(l) * l.ppw;
 export const baht = n => (n || 0).toLocaleString("th-TH");
-export const million = n => (n / 1e6).toLocaleString("th-TH", { maximumFractionDigits: 2 }) + " ล้านบาท";
+export const million = n => {
+  if (!n || n <= 0) return "โปรดสอบถามราคา";
+  return (n / 1e6).toLocaleString("th-TH", { maximumFractionDigits: 2 }) + " ล้านบาท";
+};
 
 export const typeName = { 
   sea: "ที่ดินติดทะเล", 

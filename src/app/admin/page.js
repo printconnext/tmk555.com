@@ -605,7 +605,7 @@ export default function AdminPage() {
                 <input 
                   type="number" 
                   name="ppw" 
-                  placeholder="เช่น 3750" 
+                  placeholder="กรอกราคาต่อ ตร.ว. (บาท)" 
                   value={form.ppw} 
                   onChange={handleChange} 
                   className="admin-input" 
