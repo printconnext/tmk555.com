@@ -283,7 +283,7 @@ export default function HomePageClient({ initialListings = [], initialSettings =
             <div className="sec-head" style={{ marginBottom: "36px" }}>
               <div>
                 <p className="eyebrow" style={{ color: "var(--brass-soft)" }}>กลุ่มธุรกิจทิพย์มงคล 555</p>
-                <h2>ธุรกิจในเครือของเรา</h2>
+                <h2 style={{ color: "#000" }}>ธุรกิจในเครือของเรา</h2>
               </div>
               <p>เรามุ่งมั่นสร้างสรรค์และให้บริการด้วยมาตรฐานระดับมืออาชีพ ครอบคลุมหลากหลายกลุ่มธุรกิจเพื่อความไว้วางใจสูงสุด</p>
             </div>
@@ -310,7 +310,7 @@ export default function HomePageClient({ initialListings = [], initialSettings =
               >
                 <div>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
-                    <span style={{ fontSize: "2.2rem" }}>🚗</span>
+                    <img src="/logo-carwash.webp" alt="555 Car Wash" style={{ width: "60px", height: "auto", borderRadius: "8px" }} />
                     <span style={{ background: "#ecfdf5", color: "#065f46", fontSize: "0.82rem", padding: "4px 12px", borderRadius: "20px", fontWeight: "bold" }}>
                       ธุรกิจคาร์แคร์ครบวงจร
                     </span>
@@ -347,7 +347,7 @@ export default function HomePageClient({ initialListings = [], initialSettings =
               >
                 <div>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
-                    <span style={{ fontSize: "2.2rem" }}>🏢</span>
+                    <img src="/logo-thipmongkol.png" alt="ทิพย์มงคล 555" style={{ width: "60px", height: "auto", borderRadius: "8px" }} />
                     <span style={{ background: "#fef3c7", color: "#92400e", fontSize: "0.82rem", padding: "4px 12px", borderRadius: "20px", fontWeight: "bold" }}>
                       สำนักงานใหญ่ & ผลิตภัณฑ์สุขภาพ
                     </span>
@@ -437,7 +437,7 @@ export default function HomePageClient({ initialListings = [], initialSettings =
                   rel="noopener noreferrer" 
                   style={{ color: "var(--salt)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "0.9rem" }}
                 >
-                  <span style={{ fontSize: "1.2rem" }}>🚗</span>
+                  <img src="/logo-carwash.webp" alt="555 Car Wash" style={{ width: "32px", height: "auto", borderRadius: "4px" }} />
                   <div>
                     <strong style={{ display: "block", color: "var(--salt)" }}>555 Car Wash</strong>
                     <span style={{ fontSize: "0.8rem", color: "rgba(238,240,234,.6)" }}>ศูนย์บริการล้างรถและอุปกรณ์มาตรฐาน ↗</span>
@@ -451,7 +451,7 @@ export default function HomePageClient({ initialListings = [], initialSettings =
                   rel="noopener noreferrer" 
                   style={{ color: "var(--salt)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "0.9rem" }}
                 >
-                  <span style={{ fontSize: "1.2rem" }}>🏢</span>
+                  <img src="/logo-thipmongkol.png" alt="ทิพย์มงคล 555" style={{ width: "32px", height: "auto", borderRadius: "4px" }} />
                   <div>
                     <strong style={{ display: "block", color: "var(--salt)" }}>บริษัท ทิพย์มงคล 555 จำกัด</strong>
                     <span style={{ fontSize: "0.8rem", color: "rgba(238,240,234,.6)" }}>ผลิตภัณฑ์เพื่อสุขภาพและธรรมะออนไลน์ ↗</span>

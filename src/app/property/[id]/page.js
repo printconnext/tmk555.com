@@ -388,7 +388,7 @@ export default function PropertyPage() {
                   rel="noopener noreferrer" 
                   style={{ color: "var(--salt)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "0.9rem" }}
                 >
-                  <span style={{ fontSize: "1.2rem" }}>🚗</span>
+                  <img src="/logo-carwash.webp" alt="555 Car Wash" style={{ width: "32px", height: "auto", borderRadius: "4px" }} />
                   <div>
                     <strong style={{ display: "block", color: "var(--salt)" }}>555 Car Wash</strong>
                     <span style={{ fontSize: "0.8rem", color: "rgba(238,240,234,.6)" }}>ศูนย์บริการล้างรถและอุปกรณ์มาตรฐาน ↗</span>
@@ -402,7 +402,7 @@ export default function PropertyPage() {
                   rel="noopener noreferrer" 
                   style={{ color: "var(--salt)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "0.9rem" }}
                 >
-                  <span style={{ fontSize: "1.2rem" }}>🏢</span>
+                  <img src="/logo-thipmongkol.png" alt="ทิพย์มงคล 555" style={{ width: "32px", height: "auto", borderRadius: "4px" }} />
                   <div>
                     <strong style={{ display: "block", color: "var(--salt)" }}>บริษัท ทิพย์มงคล 555 จำกัด</strong>
                     <span style={{ fontSize: "0.8rem", color: "rgba(238,240,234,.6)" }}>ผลิตภัณฑ์เพื่อสุขภาพและธรรมะออนไลน์ ↗</span>
