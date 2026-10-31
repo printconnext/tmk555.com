@@ -178,6 +178,96 @@ export default function PropertyPage() {
                 <p className="eyebrow">{property.prov} · {property.area} · {getTypeDisplay(property.type)}</p>
                 <h3 style={{ fontSize: "2rem", marginBottom: '16px' }}>{property.title}</h3>
                 <Deed {...property} />
+
+                {/* กล่องราคาและเงื่อนไข (อยู่ใต้ข้อมูลขนาดพื้นที่ทันที) */}
+                <div className="calc" style={{ margin: '20px 0', border: '1px solid var(--line)' }}>
+                  {property.ppw ? (
+                    <>
+                      {/* ราคาต่อไร่ - โดดเด่นเป็นพิเศษ */}
+                      <div className="row" style={{ alignItems: 'baseline', paddingBottom: '10px', borderBottom: '1px solid var(--line)' }}>
+                        <span style={{ fontSize: '1rem', fontWeight: 'bold', color: 'var(--ink)' }}>ราคาต่อไร่</span>
+                        <div style={{ textAlign: 'right' }}>
+                          <span style={{ fontFamily: 'var(--f-display)', fontSize: '1.9rem', fontWeight: 'bold', color: 'var(--brass)' }}>
+                            {baht(property.ppw * 400)}
+                          </span>
+                          <span style={{ fontSize: '0.95rem', color: 'var(--stone)', marginLeft: '6px' }}>บาท / ไร่</span>
+                          {property.ppw * 400 >= 1000000 && (
+                            <span style={{ display: 'block', fontSize: '0.85rem', color: '#10b981', fontWeight: 'bold' }}>
+                              ({(property.ppw * 400 / 1e6).toLocaleString('th-TH', { maximumFractionDigits: 2 })} ล้านบาท / ไร่)
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="row" style={{ paddingTop: '6px' }}>
+                        <span>ราคาต่อตารางวา</span>
+                        <span className="num" style={{ fontWeight: 'bold' }}>{baht(property.ppw)} บาท</span>
+                      </div>
+                      <div className="row">
+                        <span>ราคารวมทั้งแปลง</span>
+                        <span className="num" style={{ fontWeight: 'bold', color: 'var(--ink)' }}>{million(property.total || (toWa(property) * property.ppw))}</span>
+                      </div>
+
+                      <div className="row" style={{ marginTop: '8px', paddingTop: '10px', borderTop: '1px dashed var(--line)' }}>
+                        <label htmlFor="cWa">ต้องการซื้อ (ตร.ว.)</label>
+                        <input id="cWa" type="number" min="100" max={toWa(property)} step="10" value={cWa} onChange={e => setCWa(Math.min(Math.max(+e.target.value || 0, 0), toWa(property)))} className="num" style={{ textAlign: 'right' }} />
+                      </div>
+                      <div className="row" style={{ alignItems: "baseline" }}>
+                        <span>ราคาประมาณ</span><span className="total num">{baht(cWa * property.ppw)} บาท</span>
+                      </div>
+                      <span className="sample-note" style={{ display: 'block', marginTop: '4px' }}>แบ่งขายขั้นต่ำ 100 ตร.ว. ราคานี้ยังไม่รวมค่าธรรมเนียมโอน</span>
+                    </>
+                  ) : (
+                    <>
+                      <div className="row" style={{ alignItems: "baseline", paddingBottom: '10px', borderBottom: '1px solid var(--line)' }}>
+                        <span style={{ fontSize: '1rem', fontWeight: 'bold', color: 'var(--ink)' }}>ราคาขาย</span>
+                        <span className="total num" style={{ color: 'var(--brass)', fontSize: '1.9rem' }}>{baht(property.total)} บาท</span>
+                      </div>
+                      <div className="row" style={{ paddingTop: '8px' }}>
+                        <span>เฉลี่ยต่อตารางวา (รวมบ้าน)</span>
+                        <span className="num">{baht(Math.round(property.total / toWa(property)))} บาท</span>
+                      </div>
+                    </>
+                  )}
+
+                  {/* ป้ายรับนายหน้าต่อรองราคาได้ - เด่นสะดุดตาใต้ราคา */}
+                  <div style={{
+                    marginTop: '14px',
+                    padding: '12px 16px',
+                    background: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)',
+                    border: '2px solid #10b981',
+                    borderRadius: '8px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    boxShadow: '0 2px 6px rgba(16, 185, 129, 0.15)',
+                    gap: '12px'
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <span style={{ fontSize: '1.4rem' }}>🤝</span>
+                      <div>
+                        <span style={{ display: 'block', fontWeight: '800', color: '#065f46', fontSize: '1rem' }}>
+                          รับนายหน้า · ต่อรองราคาได้
+                        </span>
+                        <span style={{ fontSize: '0.78rem', color: '#047857' }}>
+                          ยินดีร่วมงานกับนายหน้าทุกท่าน
+                        </span>
+                      </div>
+                    </div>
+                    <span style={{
+                      background: '#10b981',
+                      color: 'white',
+                      fontSize: '0.75rem',
+                      padding: '4px 10px',
+                      borderRadius: '20px',
+                      fontWeight: 'bold',
+                      whiteSpace: 'nowrap'
+                    }}>
+                      ยินดีร่วมงาน
+                    </span>
+                  </div>
+                </div>
+
                 <dl className="specs" style={{ marginTop: '24px' }}>
                   <dt>เอกสารสิทธิ์</dt><dd>{property.deed}</dd>
                   <dt>เนื้อที่รวม</dt><dd>{baht(toWa(property))} ตร.ว. ({baht(toWa(property) * 4)} ตร.ม.)</dd>
@@ -198,26 +288,6 @@ export default function PropertyPage() {
                 <ul className="feat" style={{ margin: '24px 0' }}>
                   {property.feat && property.feat.map((f, i) => <li key={i}>{f}</li>)}
                 </ul>
-                <div className="calc" style={{ marginBottom: '24px' }}>
-                  {property.ppw ? (
-                    <>
-                      <div className="row"><span>ราคาต่อตารางวา</span><span className="num">{baht(property.ppw)} บาท</span></div>
-                      <div className="row">
-                        <label htmlFor="cWa">ต้องการซื้อ (ตร.ว.)</label>
-                        <input id="cWa" type="number" min="100" max={toWa(property)} step="10" value={cWa} onChange={e => setCWa(Math.min(Math.max(+e.target.value || 0, 0), toWa(property)))} className="num" style={{ textAlign: 'right' }} />
-                      </div>
-                      <div className="row" style={{ alignItems: "baseline" }}>
-                        <span>ราคาประมาณ</span><span className="total num">{baht(cWa * property.ppw)} บาท</span>
-                      </div>
-                      <span className="sample-note" style={{ display: 'block', marginTop: '8px' }}>แบ่งขายขั้นต่ำ 100 ตร.ว. ราคานี้ยังไม่รวมค่าธรรมเนียมโอน</span>
-                    </>
-                  ) : (
-                    <>
-                      <div className="row" style={{ alignItems: "baseline" }}><span>ราคาขาย</span><span className="total num">{baht(property.total)} บาท</span></div>
-                      <div className="row"><span>เฉลี่ยต่อตารางวา (รวมบ้าน)</span><span className="num">{baht(Math.round(property.total / toWa(property)))} บาท</span></div>
-                    </>
-                  )}
-                </div>
                 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <a className="btn btn-tel" href="tel:0977916555" style={{ width: '100%', textAlign: 'center', display: 'block' }}>📞 โทรสอบถาม: 097-791-6555</a>

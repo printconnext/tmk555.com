@@ -17,7 +17,7 @@ export default function AdminPage() {
   
   const defaultForm = {
     title: '', prov: '', area: '', type: ['sea'], 
-    rai: 0, ngan: 0, wa: 0, ppw: '', total: '', 
+    rai: 0, ngan: 0, wa: 0, ppw: '', ppr: '', total: '', 
     road: '', util: '', front: '', feat: '', deed: 'โฉนด น.ส.4 จ.', map_url: ''
   };
   
@@ -165,12 +165,19 @@ export default function AdminPage() {
 
   const handleEdit = (item) => {
     setMode('edit');
+    const itemPpw = item.ppw != null && item.ppw !== '' ? item.ppw : '';
+    const itemPpr = itemPpw !== '' ? Math.round(Number(itemPpw) * 400) : '';
+    const itemTotalWa = (Number(item.rai) || 0) * 400 + (Number(item.ngan) || 0) * 100 + (Number(item.wa) || 0);
+    const itemTotal = item.total != null && item.total !== '' ? item.total : (itemPpw !== '' && itemTotalWa > 0 ? Math.round(itemTotalWa * Number(itemPpw)) : '');
+
     setForm({
       id: item.id,
       title: item.title || '', prov: item.prov || '', area: item.area || '', 
       type: typeof item.type === 'string' ? item.type.split(',').filter(Boolean) : (item.type || ['sea']),
       rai: item.rai || 0, ngan: item.ngan || 0, wa: item.wa || 0, 
-      ppw: item.ppw || '', total: item.total || '',
+      ppw: itemPpw,
+      ppr: itemPpr,
+      total: itemTotal,
       road: item.road || '', util: item.util || '', front: item.front || '', 
       feat: item.feat ? item.feat.join(', ') : '', 
       deed: item.deed || 'โฉนด น.ส.4 จ.',
@@ -242,9 +249,11 @@ export default function AdminPage() {
         galleryUrls = form.gallery || [];
       }
 
-      // เตรียมข้อมูลบันทึก
+      // เตรียมข้อมูลบันทึก (ตัด ppr ออก เพื่อไม่ให้เกิด schema error หากตาราง Supabase ยังไม่มีคอลัมน์ ppr)
+      const { id: _formId, ppr: _ppr, ...formDataToSave } = form;
+
       const payload = { 
-        ...form,
+        ...formDataToSave,
         // type แปลง array เป็น string เวลาเซฟลงฐานข้อมูล
         type: Array.isArray(form.type) ? form.type.join(',') : form.type,
         rai: form.rai === '' ? 0 : Number(form.rai),
@@ -254,18 +263,16 @@ export default function AdminPage() {
         total: form.total === '' ? null : Number(form.total),
         img: imgUrl,
         gallery: galleryUrls,
-        feat: form.feat.split(',').map(f => f.trim()).filter(Boolean),
+        feat: form.feat ? form.feat.split(',').map(f => f.trim()).filter(Boolean) : [],
         map_url: form.map_url || null
       };
 
       if (mode === 'edit') {
-        const { id, ...updateData } = payload;
-        const { error } = await supabase.from('listings').update(updateData).eq('id', id);
+        const { error } = await supabase.from('listings').update(payload).eq('id', form.id);
         if (error) throw error;
         alert('อัปเดตข้อมูลเรียบร้อยแล้ว!');
       } else {
-        const { id, ...insertData } = payload;
-        const { error } = await supabase.from('listings').insert([insertData]);
+        const { error } = await supabase.from('listings').insert([payload]);
         if (error) throw error;
         alert('เพิ่มแปลงที่ดินใหม่เรียบร้อยแล้ว!');
       }
@@ -282,7 +289,49 @@ export default function AdminPage() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm(prev => ({ ...prev, [name]: value }));
+    
+    setForm(prev => {
+      const next = { ...prev, [name]: value };
+      
+      const curRai = name === 'rai' ? (value === '' ? 0 : Number(value)) : (prev.rai === '' ? 0 : Number(prev.rai));
+      const curNgan = name === 'ngan' ? (value === '' ? 0 : Number(value)) : (prev.ngan === '' ? 0 : Number(prev.ngan));
+      const curWa = name === 'wa' ? (value === '' ? 0 : Number(value)) : (prev.wa === '' ? 0 : Number(prev.wa));
+      const totalWa = (curRai * 400) + (curNgan * 100) + curWa;
+      
+      if (name === 'ppw') {
+        // เมื่อกรอกราคาต่อตารางวา -> คำนวณราคาต่อไร่ และ ราคารวม อัตโนมัติ
+        if (value === '') {
+          next.ppr = '';
+          next.total = '';
+        } else {
+          const numPpw = Number(value);
+          next.ppr = Math.round(numPpw * 400);
+          next.total = totalWa > 0 ? Math.round(totalWa * numPpw) : '';
+        }
+      } else if (name === 'ppr') {
+        // เมื่อกรอกราคาต่อไร่ -> คำนวณราคาต่อตารางวา และ ราคารวม อัตโนมัติ
+        if (value === '') {
+          next.ppw = '';
+          next.total = '';
+        } else {
+          const numPpr = Number(value);
+          const calcPpw = Math.round(numPpr / 400);
+          next.ppw = calcPpw;
+          next.total = totalWa > 0 ? Math.round(totalWa * (numPpr / 400)) : '';
+        }
+      } else if (name === 'rai' || name === 'ngan' || name === 'wa') {
+        // เมื่อเปลี่ยนขนาดพื้นที่ ไร่ / งาน / ตารางวา
+        if (next.ppw !== '' && next.ppw != null) {
+          const numPpw = Number(next.ppw);
+          next.total = totalWa > 0 ? Math.round(totalWa * numPpw) : '';
+        } else if (next.ppr !== '' && next.ppr != null) {
+          const numPpr = Number(next.ppr);
+          next.total = totalWa > 0 ? Math.round(totalWa * (numPpr / 400)) : '';
+        }
+      }
+      
+      return next;
+    });
   };
 
   const handleTypeToggle = (typeVal) => {
@@ -538,16 +587,84 @@ export default function AdminPage() {
               <div><label>งาน</label><input type="number" name="ngan" value={form.ngan} onChange={handleChange} className="admin-input" min="0" max="3" /></div>
               <div><label>ตารางวา</label><input type="number" name="wa" value={form.wa} onChange={handleChange} className="admin-input" min="0" max="99" /></div>
             </div>
+            {(() => {
+              const wa = (Number(form.rai) || 0) * 400 + (Number(form.ngan) || 0) * 100 + (Number(form.wa) || 0);
+              return wa > 0 ? (
+                <div style={{ marginTop: '8px', fontSize: '13px', color: '#6b7280' }}>
+                  📐 รวมทั้งสิ้น <b>{wa.toLocaleString('th-TH')}</b> ตารางวา
+                </div>
+              ) : null;
+            })()}
           </div>
 
-          <div className="admin-grid">
-            <div>
-              <label>ราคาต่อตารางวา (บาท)</label>
-              <input type="number" name="ppw" value={form.ppw} onChange={handleChange} className="admin-input" />
+          <div style={{ background: '#f9fafb', padding: '16px', borderRadius: '8px', border: '1px solid #eee', marginBottom: '16px' }}>
+            <h3 style={{ margin: '0 0 12px 0' }}>ราคาที่ดิน</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+              <div>
+                <label style={{ fontWeight: 'bold' }}>ราคาต่อตารางวา (บาท)</label>
+                <input 
+                  type="number" 
+                  name="ppw" 
+                  placeholder="เช่น 3750" 
+                  value={form.ppw} 
+                  onChange={handleChange} 
+                  className="admin-input" 
+                />
+                {form.ppw !== '' && form.ppw != null && (
+                  <span style={{ fontSize: '12px', color: '#10b981', display: 'block', marginTop: '4px', fontWeight: 'bold' }}>
+                    {Number(form.ppw).toLocaleString('th-TH')} บ./ตร.ว.
+                  </span>
+                )}
+              </div>
+
+              <div>
+                <label style={{ fontWeight: 'bold' }}>
+                  ราคาต่อไร่ (บาท) <span style={{ fontSize: '12px', color: '#10b981', fontWeight: 'normal' }}>(คำนวณอัตโนมัติ)</span>
+                </label>
+                <input 
+                  type="number" 
+                  name="ppr" 
+                  placeholder="คำนวณอัตโนมัติ (หรือกรอกได้)" 
+                  value={form.ppr} 
+                  onChange={handleChange} 
+                  className="admin-input" 
+                />
+                {form.ppr !== '' && form.ppr != null && (
+                  <span style={{ fontSize: '12px', color: '#10b981', display: 'block', marginTop: '4px', fontWeight: 'bold' }}>
+                    {Number(form.ppr).toLocaleString('th-TH')} บ./ไร่
+                    {Number(form.ppr) >= 1000000 ? ` (${(Number(form.ppr) / 1000000).toLocaleString('th-TH', { maximumFractionDigits: 2 })} ล้านบาท)` : ''}
+                  </span>
+                )}
+              </div>
+
+              <div>
+                <label style={{ fontWeight: 'bold' }}>
+                  ราคารวม (บาท) <span style={{ fontSize: '12px', color: '#b45309', fontWeight: 'normal' }}>(คำนวณอัตโนมัติ)</span>
+                </label>
+                <input 
+                  type="number" 
+                  name="total" 
+                  placeholder="คำนวณอัตโนมัติ (หรือกรอกเอง)" 
+                  value={form.total} 
+                  onChange={handleChange} 
+                  className="admin-input" 
+                />
+                {form.total !== '' && form.total != null && (
+                  <span style={{ fontSize: '12px', color: '#b45309', display: 'block', marginTop: '4px', fontWeight: 'bold' }}>
+                    รวม {Number(form.total).toLocaleString('th-TH')} บาท
+                    {Number(form.total) >= 1000000 ? ` (${(Number(form.total) / 1000000).toLocaleString('th-TH', { maximumFractionDigits: 2 })} ล้านบาท)` : ''}
+                  </span>
+                )}
+              </div>
             </div>
-            <div>
-              <label>ราคารวม (บาท)</label>
-              <input type="number" name="total" value={form.total} onChange={handleChange} className="admin-input" />
+
+            <div style={{ marginTop: '16px', padding: '10px 14px', background: '#ecfdf5', border: '1px solid #10b981', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px' }}>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: 'bold', color: '#065f46', fontSize: '0.95rem' }}>
+                <span style={{ fontSize: '1.2rem' }}>🤝</span> รับนายหน้า · ต่อรองราคาได้
+              </span>
+              <span style={{ background: '#10b981', color: 'white', fontSize: '0.75rem', padding: '3px 10px', borderRadius: '12px', fontWeight: 'bold' }}>
+                แสดงบนหน้าเว็บทุกแปลง
+              </span>
             </div>
           </div>
 

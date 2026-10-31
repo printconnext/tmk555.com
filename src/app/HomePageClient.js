@@ -184,9 +184,32 @@ export default function HomePageClient({ initialListings = [], initialSettings =
                     <span className="loc">{l.prov} · {l.area}</span>
                     <h3>{l.title}</h3>
                     <Deed {...l} />
-                    <div className="price-row">
-                      <span className="price num">{million(priceOf(l))}</span>
+                    <div className="price-row" style={{ alignItems: 'baseline' }}>
+                      <div>
+                        <span className="price num">{million(priceOf(l))}</span>
+                        {l.ppw ? (
+                          <span style={{ display: 'block', fontSize: '0.86rem', color: 'var(--brass)', fontWeight: 'bold' }}>
+                            ไร่ละ {baht(l.ppw * 400)} บาท
+                          </span>
+                        ) : null}
+                      </div>
                       <span className="ppw num">{l.ppw ? baht(l.ppw) + " บ./ตร.ว." : l.front}</span>
+                    </div>
+                    <div style={{ marginTop: '8px' }}>
+                      <span style={{
+                        background: '#ecfdf5',
+                        color: '#065f46',
+                        border: '1px solid #a7f3d0',
+                        fontSize: '0.78rem',
+                        fontWeight: '600',
+                        padding: '3px 8px',
+                        borderRadius: '4px',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '4px'
+                      }}>
+                        🤝 รับนายหน้า · ต่อรองราคาได้
+                      </span>
                     </div>
                   </div>
                 </Link>
