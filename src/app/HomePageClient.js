@@ -310,7 +310,7 @@ export default function HomePageClient({ initialListings = [], initialSettings =
               >
                 <div>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
-                    <img src="/logo-carwash.webp" alt="555 Car Wash" style={{ width: "60px", height: "auto", borderRadius: "8px" }} />
+                    <img src="/logo-carwash.png" alt="555 Car Wash" style={{ width: "60px", height: "auto", borderRadius: "8px" }} />
                     <span style={{ background: "#ecfdf5", color: "#065f46", fontSize: "0.82rem", padding: "4px 12px", borderRadius: "20px", fontWeight: "bold" }}>
                       ธุรกิจคาร์แคร์ครบวงจร
                     </span>
@@ -437,7 +437,7 @@ export default function HomePageClient({ initialListings = [], initialSettings =
                   rel="noopener noreferrer" 
                   style={{ color: "var(--salt)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "0.9rem" }}
                 >
-                  <img src="/logo-carwash.webp" alt="555 Car Wash" style={{ width: "32px", height: "auto", borderRadius: "4px" }} />
+                  <img src="/logo-carwash.png" alt="555 Car Wash" style={{ width: "32px", height: "auto", borderRadius: "4px" }} />
                   <div>
                     <strong style={{ display: "block", color: "var(--salt)" }}>555 Car Wash</strong>
                     <span style={{ fontSize: "0.8rem", color: "rgba(238,240,234,.6)" }}>ศูนย์บริการล้างรถและอุปกรณ์มาตรฐาน ↗</span>
