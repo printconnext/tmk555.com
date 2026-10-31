@@ -101,6 +101,7 @@ export default function HomePageClient({ initialListings = [], initialSettings =
             <a href="#places">ทำเล</a>
             <a href="#why">มาตรฐานของเรา</a>
             <a href="#steps">ขั้นตอนการซื้อ</a>
+            <a href="#affiliates">ธุรกิจในเครือ</a>
             <a href="#contact">ฝากขาย / ติดต่อ</a>
           </nav>
           <div style={{ display: 'flex', gap: '8px' }}>
@@ -276,6 +277,95 @@ export default function HomePageClient({ initialListings = [], initialSettings =
           </div>
         </section>
 
+        {/* ธุรกิจในเครือทิพย์มงคล 555 */}
+        <section className="band" id="affiliates" style={{ background: "var(--paper)", borderTop: "1px solid var(--line)", padding: "70px 0" }}>
+          <div className="wrap">
+            <div className="sec-head" style={{ marginBottom: "36px" }}>
+              <div>
+                <p className="eyebrow" style={{ color: "var(--brass-soft)" }}>กลุ่มธุรกิจทิพย์มงคล 555</p>
+                <h2>ธุรกิจในเครือของเรา</h2>
+              </div>
+              <p>เรามุ่งมั่นสร้างสรรค์และให้บริการด้วยมาตรฐานระดับมืออาชีพ ครอบคลุมหลากหลายกลุ่มธุรกิจเพื่อความไว้วางใจสูงสุด</p>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px" }}>
+              {/* Card 1: 555 Car Wash */}
+              <a 
+                href="https://555carwash.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  background: "var(--salt)",
+                  borderRadius: "12px",
+                  padding: "30px",
+                  border: "1px solid var(--line)",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  transition: "all 0.25s ease",
+                  boxShadow: "0 2px 10px rgba(0,0,0,0.03)"
+                }}
+              >
+                <div>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+                    <span style={{ fontSize: "2.2rem" }}>🚗</span>
+                    <span style={{ background: "#ecfdf5", color: "#065f46", fontSize: "0.82rem", padding: "4px 12px", borderRadius: "20px", fontWeight: "bold" }}>
+                      ธุรกิจคาร์แคร์ครบวงจร
+                    </span>
+                  </div>
+                  <h3 style={{ fontSize: "1.4rem", marginBottom: "8px", color: "var(--ink)" }}>555 Car Wash</h3>
+                  <p style={{ color: "var(--stone)", fontSize: "0.95rem", lineHeight: "1.6", margin: 0 }}>
+                    ศูนย์บริการระบบล้างรถอัตโนมัติและจำหน่ายอุปกรณ์ล้างรถมาตรฐานสากล
+                  </p>
+                </div>
+                <div style={{ marginTop: "24px", display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--brass)", fontWeight: "bold", fontSize: "0.95rem" }}>
+                  <span>เข้าสู่เว็บไซต์ 555carwash.com</span>
+                  <span>↗</span>
+                </div>
+              </a>
+
+              {/* Card 2: thipmongkol555.com */}
+              <a 
+                href="https://www.thipmongkol555.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  background: "var(--salt)",
+                  borderRadius: "12px",
+                  padding: "30px",
+                  border: "1px solid var(--line)",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  transition: "all 0.25s ease",
+                  boxShadow: "0 2px 10px rgba(0,0,0,0.03)"
+                }}
+              >
+                <div>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+                    <span style={{ fontSize: "2.2rem" }}>🏢</span>
+                    <span style={{ background: "#fef3c7", color: "#92400e", fontSize: "0.82rem", padding: "4px 12px", borderRadius: "20px", fontWeight: "bold" }}>
+                      สำนักงานใหญ่ & ผลิตภัณฑ์สุขภาพ
+                    </span>
+                  </div>
+                  <h3 style={{ fontSize: "1.4rem", marginBottom: "8px", color: "var(--ink)" }}>บริษัท ทิพย์มงคล 555 จำกัด</h3>
+                  <p style={{ color: "var(--stone)", fontSize: "0.95rem", lineHeight: "1.6", margin: 0 }}>
+                    ผู้ผลิตและจำหน่ายผลิตภัณฑ์เพื่อสุขภาพ น้ำมังคุดตราพนารินทร์ และสถานีวิทยุธรรมะออนไลน์ 24 ชม.
+                  </p>
+                </div>
+                <div style={{ marginTop: "24px", display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--brass)", fontWeight: "bold", fontSize: "0.95rem" }}>
+                  <span>เข้าสู่เว็บไซต์ thipmongkol555.com</span>
+                  <span>↗</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
         <section className="contact" id="contact">
           <div className="wrap contact-grid">
             <div className="contact-info">
@@ -318,10 +408,76 @@ export default function HomePageClient({ initialListings = [], initialSettings =
         </section>
       </main>
 
-      <footer>
-        <div className="wrap">
-          <a className="brand" href="#top"><b>ทิพย์มงคล<span>555</span></b><small>PROPERTY</small></a>
-          <span>© 2569 ทิพย์มงคล555 Property · <Link href="/admin" style={{ color: 'inherit', textDecoration: 'none' }}>tmk555.com</Link> · โทร: 097-791-6555</span>
+      <footer style={{ background: "var(--ink)", color: "rgba(238,240,234,.75)", padding: "50px 0 30px" }}>
+        <div className="wrap" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "36px", marginBottom: "36px" }}>
+          {/* Column 1: Brand Info */}
+          <div>
+            <a className="brand" href="#top" style={{ color: "var(--salt)", textDecoration: "none", display: "inline-block", marginBottom: "14px" }}>
+              <b style={{ fontSize: "1.35rem" }}>ทิพย์มงคล<span style={{ color: "var(--brass)" }}>555</span></b>
+              <small style={{ display: "block", letterSpacing: "2px", fontSize: "0.75rem", color: "var(--brass-soft)" }}>PROPERTY</small>
+            </a>
+            <p style={{ fontSize: "0.88rem", lineHeight: "1.6", color: "rgba(238,240,234,.7)", margin: "0 0 14px 0" }}>
+              ตัวแทนคัดสรรที่ดินริมทะเล วิวภูเขา และพูลวิลล่า ตรวจสอบโฉนดและทางเข้าออกชัดเจน พร้อมดูแลจนถึงวันโอนกรรมสิทธิ์
+            </p>
+            <div style={{ fontSize: "0.88rem", color: "rgba(238,240,234,.8)" }}>
+              📞 โทร: <a href="tel:0977916555" style={{ color: "var(--salt)", textDecoration: "none", fontWeight: "bold" }}>097-791-6555</a>
+            </div>
+          </div>
+
+          {/* Column 2: Affiliated Businesses */}
+          <div>
+            <h4 style={{ color: "var(--salt)", fontSize: "1rem", marginBottom: "16px", borderBottom: "1px solid rgba(255,255,255,.15)", paddingBottom: "8px" }}>
+              🔗 ธุรกิจในเครือทิพย์มงคล 555
+            </h4>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "14px" }}>
+              <li>
+                <a 
+                  href="https://555carwash.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ color: "var(--salt)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "0.9rem" }}
+                >
+                  <span style={{ fontSize: "1.2rem" }}>🚗</span>
+                  <div>
+                    <strong style={{ display: "block", color: "var(--salt)" }}>555 Car Wash</strong>
+                    <span style={{ fontSize: "0.8rem", color: "rgba(238,240,234,.6)" }}>ศูนย์บริการล้างรถและอุปกรณ์มาตรฐาน ↗</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.thipmongkol555.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ color: "var(--salt)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "0.9rem" }}
+                >
+                  <span style={{ fontSize: "1.2rem" }}>🏢</span>
+                  <div>
+                    <strong style={{ display: "block", color: "var(--salt)" }}>บริษัท ทิพย์มงคล 555 จำกัด</strong>
+                    <span style={{ fontSize: "0.8rem", color: "rgba(238,240,234,.6)" }}>ผลิตภัณฑ์เพื่อสุขภาพและธรรมะออนไลน์ ↗</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Contact & Hours */}
+          <div>
+            <h4 style={{ color: "var(--salt)", fontSize: "1rem", marginBottom: "16px", borderBottom: "1px solid rgba(255,255,255,.15)", paddingBottom: "8px" }}>
+              📍 ข้อมูลติดต่อ
+            </h4>
+            <div style={{ fontSize: "0.88rem", lineHeight: "1.8", color: "rgba(238,240,234,.7)" }}>
+              <div>LINE: <a href="https://line.me/ti/p/~@tmk555" target="_blank" rel="noreferrer" style={{ color: "var(--brass)", textDecoration: "none" }}>@tmk555</a></div>
+              <div>เวลาทำการ: ทุกวัน 09:00 – 18:00 น.</div>
+              <div>เว็บไซต์: <span style={{ color: "var(--salt)" }}>tmk555.com</span></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom copyright bar */}
+        <div className="wrap" style={{ borderTop: "1px solid rgba(255,255,255,.1)", paddingTop: "18px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", fontSize: "0.82rem" }}>
+          <span>© 2569 ทิพย์มงคล555 Property สงวนลิขสิทธิ์ทั้งหมด</span>
+          <span><Link href="/admin" style={{ color: "rgba(238,240,234,.5)", textDecoration: "none" }}>เข้าสู่ระบบจัดการหลังบ้าน</Link></span>
         </div>
       </footer>
 

@@ -359,10 +359,76 @@ export default function PropertyPage() {
           )}
         </div>
       </main>
-      <footer>
-        <div className="wrap">
-          <Link className="brand" href="/" style={{ textDecoration: 'none' }}><b>ทิพย์มงคล<span>555</span></b><small>PROPERTY</small></Link>
-          <span>© 2569 ทิพย์มงคล555 Property · <Link href="/admin" style={{ color: 'inherit', textDecoration: 'none' }}>tmk555.com</Link> · โทร: 097-791-6555</span>
+      <footer style={{ background: "var(--ink)", color: "rgba(238,240,234,.75)", padding: "50px 0 30px" }}>
+        <div className="wrap" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "36px", marginBottom: "36px" }}>
+          {/* Column 1: Brand Info */}
+          <div>
+            <Link className="brand" href="/" style={{ color: "var(--salt)", textDecoration: "none", display: "inline-block", marginBottom: "14px" }}>
+              <b style={{ fontSize: "1.35rem" }}>ทิพย์มงคล<span style={{ color: "var(--brass)" }}>555</span></b>
+              <small style={{ display: "block", letterSpacing: "2px", fontSize: "0.75rem", color: "var(--brass-soft)" }}>PROPERTY</small>
+            </Link>
+            <p style={{ fontSize: "0.88rem", lineHeight: "1.6", color: "rgba(238,240,234,.7)", margin: "0 0 14px 0" }}>
+              ตัวแทนคัดสรรที่ดินริมทะเล วิวภูเขา และพูลวิลล่า ตรวจสอบโฉนดและทางเข้าออกชัดเจน พร้อมดูแลจนถึงวันโอนกรรมสิทธิ์
+            </p>
+            <div style={{ fontSize: "0.88rem", color: "rgba(238,240,234,.8)" }}>
+              📞 โทร: <a href="tel:0977916555" style={{ color: "var(--salt)", textDecoration: "none", fontWeight: "bold" }}>097-791-6555</a>
+            </div>
+          </div>
+
+          {/* Column 2: Affiliated Businesses */}
+          <div>
+            <h4 style={{ color: "var(--salt)", fontSize: "1rem", marginBottom: "16px", borderBottom: "1px solid rgba(255,255,255,.15)", paddingBottom: "8px" }}>
+              🔗 ธุรกิจในเครือทิพย์มงคล 555
+            </h4>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "14px" }}>
+              <li>
+                <a 
+                  href="https://555carwash.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ color: "var(--salt)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "0.9rem" }}
+                >
+                  <span style={{ fontSize: "1.2rem" }}>🚗</span>
+                  <div>
+                    <strong style={{ display: "block", color: "var(--salt)" }}>555 Car Wash</strong>
+                    <span style={{ fontSize: "0.8rem", color: "rgba(238,240,234,.6)" }}>ศูนย์บริการล้างรถและอุปกรณ์มาตรฐาน ↗</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.thipmongkol555.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ color: "var(--salt)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "0.9rem" }}
+                >
+                  <span style={{ fontSize: "1.2rem" }}>🏢</span>
+                  <div>
+                    <strong style={{ display: "block", color: "var(--salt)" }}>บริษัท ทิพย์มงคล 555 จำกัด</strong>
+                    <span style={{ fontSize: "0.8rem", color: "rgba(238,240,234,.6)" }}>ผลิตภัณฑ์เพื่อสุขภาพและธรรมะออนไลน์ ↗</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Contact & Hours */}
+          <div>
+            <h4 style={{ color: "var(--salt)", fontSize: "1rem", marginBottom: "16px", borderBottom: "1px solid rgba(255,255,255,.15)", paddingBottom: "8px" }}>
+              📍 ข้อมูลติดต่อ
+            </h4>
+            <div style={{ fontSize: "0.88rem", lineHeight: "1.8", color: "rgba(238,240,234,.7)" }}>
+              <div>LINE: <a href="https://line.me/ti/p/~@tmk555" target="_blank" rel="noreferrer" style={{ color: "var(--brass)", textDecoration: "none" }}>@tmk555</a></div>
+              <div>เวลาทำการ: ทุกวัน 09:00 – 18:00 น.</div>
+              <div>เว็บไซต์: <span style={{ color: "var(--salt)" }}>tmk555.com</span></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom copyright bar */}
+        <div className="wrap" style={{ borderTop: "1px solid rgba(255,255,255,.1)", paddingTop: "18px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", fontSize: "0.82rem" }}>
+          <span>© 2569 ทิพย์มงคล555 Property สงวนลิขสิทธิ์ทั้งหมด</span>
+          <span><Link href="/admin" style={{ color: "rgba(238,240,234,.5)", textDecoration: "none" }}>เข้าสู่ระบบจัดการหลังบ้าน</Link></span>
         </div>
       </footer>
     </>
