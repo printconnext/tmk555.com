@@ -199,23 +199,23 @@ export default function PropertyPage() {
                         </div>
                       </div>
 
-                      <div className="row" style={{ paddingTop: '6px' }}>
+                      <div className="row" style={{ paddingTop: '8px' }}>
                         <span>ราคาต่อตารางวา</span>
                         <span className="num" style={{ fontWeight: 'bold' }}>{baht(property.ppw)} บาท</span>
                       </div>
-                      <div className="row">
-                        <span>ราคารวมทั้งแปลง</span>
-                        <span className="num" style={{ fontWeight: 'bold', color: 'var(--ink)' }}>{million(property.total || (toWa(property) * property.ppw))}</span>
+                      <div className="row" style={{ alignItems: 'baseline', paddingTop: '6px' }}>
+                        <span style={{ fontWeight: 'bold', color: 'var(--ink)' }}>ราคารวมทั้งแปลง (ขายยกแปลง)</span>
+                        <div style={{ textAlign: 'right' }}>
+                          <span className="num" style={{ fontWeight: 'bold', fontSize: '1.35rem', color: 'var(--ink)' }}>
+                            {million(property.total || (toWa(property) * property.ppw))}
+                          </span>
+                          {(property.total || (toWa(property) * property.ppw)) && (
+                            <span style={{ display: 'block', fontSize: '0.82rem', color: 'var(--stone)' }}>
+                              ({baht(property.total || (toWa(property) * property.ppw))} บาท)
+                            </span>
+                          )}
+                        </div>
                       </div>
-
-                      <div className="row" style={{ marginTop: '8px', paddingTop: '10px', borderTop: '1px dashed var(--line)' }}>
-                        <label htmlFor="cWa">ต้องการซื้อ (ตร.ว.)</label>
-                        <input id="cWa" type="number" min="100" max={toWa(property)} step="10" value={cWa} onChange={e => setCWa(Math.min(Math.max(+e.target.value || 0, 0), toWa(property)))} className="num" style={{ textAlign: 'right' }} />
-                      </div>
-                      <div className="row" style={{ alignItems: "baseline" }}>
-                        <span>ราคาประมาณ</span><span className="total num">{baht(cWa * property.ppw)} บาท</span>
-                      </div>
-                      <span className="sample-note" style={{ display: 'block', marginTop: '4px' }}>แบ่งขายขั้นต่ำ 100 ตร.ว. ราคานี้ยังไม่รวมค่าธรรมเนียมโอน</span>
                     </>
                   ) : (
                     <>
