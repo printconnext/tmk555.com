@@ -362,6 +362,43 @@ export default function HomePageClient({ initialListings = [], initialSettings =
                   <span>↗</span>
                 </div>
               </a>
+
+              {/* Card 3: MR.TIRE */}
+              <a 
+                href="https://www.mrtire555.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  background: "var(--salt)",
+                  borderRadius: "12px",
+                  padding: "30px",
+                  border: "1px solid var(--line)",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  transition: "all 0.25s ease",
+                  boxShadow: "0 2px 10px rgba(0,0,0,0.03)"
+                }}
+              >
+                <div>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+                    <img src="/logo-mrtire.png" alt="MR.TIRE" style={{ width: "60px", height: "auto", borderRadius: "8px" }} />
+                    <span style={{ background: "#eff6ff", color: "#1e40af", fontSize: "0.82rem", padding: "4px 12px", borderRadius: "20px", fontWeight: "bold" }}>
+                      ศูนย์บริการยางรถยนต์ครบวงจร
+                    </span>
+                  </div>
+                  <h3 style={{ fontSize: "1.4rem", marginBottom: "8px", color: "var(--ink)" }}>MR.TIRE (มิสเตอร์ไทร์)</h3>
+                  <p style={{ color: "var(--stone)", fontSize: "0.95rem", lineHeight: "1.6", margin: 0 }}>
+                    ศูนย์บริการเปลี่ยนยางรถยนต์ ตั้งศูนย์ ถ่วงล้อ แม็กซ์ และดูแลระบบช่วงล่างมาตรฐานครบวงจร
+                  </p>
+                </div>
+                <div style={{ marginTop: "24px", display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--brass)", fontWeight: "bold", fontSize: "0.95rem" }}>
+                  <span>เข้าสู่เว็บไซต์ mrtire555.com</span>
+                  <span>↗</span>
+                </div>
+              </a>
             </div>
           </div>
         </section>
@@ -455,6 +492,20 @@ export default function HomePageClient({ initialListings = [], initialSettings =
                   <div>
                     <strong style={{ display: "block", color: "var(--salt)" }}>บริษัท ทิพย์มงคล 555 จำกัด</strong>
                     <span style={{ fontSize: "0.8rem", color: "rgba(238,240,234,.6)" }}>ผลิตภัณฑ์เพื่อสุขภาพและธรรมะออนไลน์ ↗</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.mrtire555.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ color: "var(--salt)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "0.9rem" }}
+                >
+                  <img src="/logo-mrtire.png" alt="MR.TIRE" style={{ width: "32px", height: "auto", borderRadius: "4px" }} />
+                  <div>
+                    <strong style={{ display: "block", color: "var(--salt)" }}>MR.TIRE</strong>
+                    <span style={{ fontSize: "0.8rem", color: "rgba(238,240,234,.6)" }}>ศูนย์บริการยางรถยนต์และช่วงล่างครบวงจร ↗</span>
                   </div>
                 </a>
               </li>

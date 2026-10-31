@@ -409,6 +409,20 @@ export default function PropertyPage() {
                   </div>
                 </a>
               </li>
+              <li>
+                <a 
+                  href="https://www.mrtire555.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ color: "var(--salt)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "0.9rem" }}
+                >
+                  <img src="/logo-mrtire.png" alt="MR.TIRE" style={{ width: "32px", height: "auto", borderRadius: "4px" }} />
+                  <div>
+                    <strong style={{ display: "block", color: "var(--salt)" }}>MR.TIRE</strong>
+                    <span style={{ fontSize: "0.8rem", color: "rgba(238,240,234,.6)" }}>ศูนย์บริการยางรถยนต์และช่วงล่างครบวงจร ↗</span>
+                  </div>
+                </a>
+              </li>
             </ul>
           </div>
 
