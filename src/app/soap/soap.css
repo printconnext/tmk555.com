@@ -1,0 +1,30 @@
+/* ส่วนเฉพาะหน้าสบู่ ต่อจาก _panarin/panarin.css */
+.pn-page .pn-soap-size{right:-4%;top:-3%;bottom:auto}
+
+/* เนื้อสบู่: แถบสีม่วงมังคุด */
+.pn-page .pn-soap-texture{padding-block:clamp(48px,7vw,84px);background:var(--mangosteen-700);color:var(--white)}
+.pn-soap-texture__grid{display:grid;gap:clamp(24px,5vw,56px);align-items:center}
+.pn-soap-texture__photo{border-radius:var(--radius-lg);overflow:hidden;border:6px solid var(--white)}
+.pn-soap-texture__photo img{width:100%}
+.pn-page .pn-soap-texture h2{color:var(--white);font-size:clamp(1.8rem,5vw,2.7rem);font-weight:700;line-height:1.18}
+.pn-page .pn-soap-texture h2::after{content:"";display:block;width:92px;height:4px;margin-top:14px;border-radius:4px;background:var(--gold-300)}
+.pn-soap-texture__list{display:grid;gap:16px;margin-top:22px}
+.pn-soap-texture__list b{display:block;font-family:var(--pn-font-display),sans-serif;font-weight:600;font-size:1.22rem;line-height:1.3}
+.pn-soap-texture__list span{display:block;margin-top:2px}
+@media (min-width:900px){.pn-soap-texture__grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+
+/* สมุนไพร: ไม่มีหลอดตรงกลาง */
+@media (min-width:1040px){
+  .pn-herb-list.pn-herb-list--plain{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .pn-herb-list--plain .pn-herb:nth-child(n){grid-area:auto}
+}
+
+/* แกลเลอรีคงสัดส่วนภาพเดิม */
+.pn-soap-gallery{columns:1;column-gap:18px}
+.pn-soap-gallery a{display:block;margin-bottom:18px;break-inside:avoid;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card)}
+.pn-soap-gallery img{width:100%}
+@media (min-width:600px){.pn-soap-gallery{columns:2}}
+
+/* ปิดท้าย */
+.pn-soap-final__photo{width:clamp(96px,26vw,240px);aspect-ratio:1;border-radius:var(--radius-lg);overflow:hidden;border:4px solid var(--white)}
+.pn-soap-final__photo img{width:100%;height:100%!important;object-fit:cover;object-position:62% 70%}
